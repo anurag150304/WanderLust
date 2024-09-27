@@ -1,0 +1,116 @@
+<% layout('/layouts/boilerplate.ejs') %>
+
+    <body>
+        <nav class="nav_icons">
+            <ul>
+                <li><a href="#">
+                        <div>
+                            <img src="https://a0.muscache.com/im/pictures/mediaverse/category_icon/original/3e5243c8-4d15-4c6b-97e3-7ba2bb7bb880.png"
+                                alt="png">
+                        </div>
+                        <p>Icons</p>
+                    </a>
+                </li>
+                <li><a href="/listings/category=Amazing pools">
+                        <div>
+                            <img src="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg"
+                                alt="png">
+                        </div>
+                        <p>Amazing pools</p>
+                    </a>
+                </li>
+                <li><a href="/listings/category=Farms">
+                        <div>
+                            <img src="https://a0.muscache.com/pictures/aaa02c2d-9f0d-4c41-878a-68c12ec6c6bd.jpg"
+                                alt="png">
+                        </div>
+                        <p>Farms</p>
+                    </a>
+                </li>
+                <li><a href="/listings/category=Amazing views">
+                        <div>
+                            <img src="https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg"
+                                alt="png">
+                        </div>
+                        <p>Amazing views</p>
+                    </a>
+                </li>
+                <li><a href="/listings/category=National park">
+                        <div>
+                            <img src="https://a0.muscache.com/pictures/c0a24c04-ce1f-490c-833f-987613930eca.jpg"
+                                alt="png">
+                        </div>
+                        <p>National park</p>
+                    </a>
+                </li>
+                <li><a href="/listings/category=Camping">
+                        <div>
+                            <img src="https://a0.muscache.com/pictures/ca25c7f3-0d1f-432b-9efa-b9f5dc6d8770.jpg"
+                                alt="png">
+                        </div>
+                        <p>Camping</p>
+                    </a>
+                </li>
+                <li><a href="/listings/category=Rooms">
+                        <div>
+                            <img src="https://a0.muscache.com/pictures/7630c83f-96a8-4232-9a10-0398661e2e6f.jpg"
+                                alt="png">
+                        </div>
+                        <p>Rooms</p>
+                    </a>
+                </li>
+                <li><a href="/listings/category=Cabins">
+                        <div>
+                            <img src="https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg"
+                                alt="png">
+                        </div>
+                        <p>Cabins</p>
+                    </a>
+                </li>
+                <li><a href="/listings/category=Treehouses">
+                        <div>
+                            <img src="https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg"
+                                alt="png">
+                        </div>
+                        <p>Treehouses</p>
+                    </a>
+                </li>
+                <li><a href="/listings/category=OMG">
+                        <div>
+                            <img src="https://a0.muscache.com/pictures/c5a4f6fc-c92c-4ae8-87dd-57f1ff1b89a6.jpg"
+                                alt="png">
+                        </div>
+                        <p>OMG!</p>
+                    </a>
+                </li>
+                <li><a href="/listings/category=Luxurious">
+                        <div>
+                            <img src="https://a0.muscache.com/pictures/c8e2ed05-c666-47b6-99fc-4cb6edcde6b4.jpg"
+                                alt="png">
+                        </div>
+                        <p>Luxe</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 m-1 p-0">
+            <% for(const val of DATA) { %>
+                <div class="card idx-card col m-3 p-0" style="width: 15.98rem;">
+                    <a href="/listings/id=<%= val._id %>">
+                        <img src="<%= val.image.url %>" class="card-img-top" style="height: 15.98rem;">
+                        <div class="card-body m-0 p-0">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <b>
+                                        <%= val.title %>
+                                    </b>
+                                </li>
+                                <li class="list-group-item">
+                                    &#8377;<%= val.price.toLocaleString("en-IN") %>/night
+                                </li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+                <% } %>
+        </div>

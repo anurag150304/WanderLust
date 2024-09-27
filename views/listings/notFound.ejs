@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Error 404 (Not Found)</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    body {
+        background-color: #f8f8f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 600px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+    }
+
+    .error-message h1 {
+        font-size: 100px;
+        color: #ff6f61;
+    }
+
+    .error-message h2 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .error-message p {
+        font-size: 18px;
+        color: #777;
+        margin-bottom: 30px;
+    }
+
+    .search-bar {
+        margin-bottom: 20px;
+    }
+
+    .search-bar input {
+        padding: 10px;
+        width: 80%;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .search-bar button {
+        padding: 10px 20px;
+        background-color: #ff6f61;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .buttons a {
+        display: inline-block;
+        padding: 12px 25px;
+        margin: 10px;
+        text-decoration: none;
+        color: white;
+        background-color: #ff6f61;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .buttons a:hover {
+        background-color: #ff3b3b;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="error-message">
+            <h1>404</h1>
+            <h2>Oops! Page Not Found</h2>
+            <p>We can't seem to find the page you're looking for.</p>
+            <div class="buttons">
+                <a href="javascript:history.back()" class="back-btn">Go Back</a>
+                <a href="/" class="home-btn">Go to Homepage</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

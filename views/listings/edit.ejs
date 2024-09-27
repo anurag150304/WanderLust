@@ -1,0 +1,51 @@
+<% layout('/layouts/boilerplate.ejs') %>
+
+    <body>
+        <form class="row g-3 p-4 needs-validation" action="/listings/id=<%= DATA._id %>?_method=PUT" method="post"
+            enctype="multipart/form-data" novalidate>
+            <div class="col-md-6">
+                <label for="inputTitle" class="form-label"><b>Title</b></label>
+                <input type="text" class="form-control" name="listings[title]" id="inputTitle" value="<%= DATA.title %>"
+                    required>
+                <div class="invalid-feedback">Please choose a username.</div>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="inputImg"><b>Upload New Image</b></label>
+                <input type="file" class="form-control" id="inputImg" name="listings[image]">
+            </div>
+            <div class="col-md-8">
+                <label for="inputContent" class="form-label"><b>Content</b></label>
+                <textarea class="form-control" id="inputContent" rows="4" name="listings[description]"
+                    required><%= DATA.description %></textarea>
+                <div class="invalid-feedback">Description required</div>
+            </div>
+            <div class="col-md-3">
+                <img src="<%= DATA.image.url %>" alt="png"
+                    style="height: 113px; width: 163px; margin-left: 6rem; margin-top: 1.25rem; border-radius: 0.5em;">
+            </div>
+            <div class="col-md-4">
+                <label for="inputAPrice" class="form-label"><b>Price</b></label>
+                <input type="text" class="form-control" id="inputPrice" name="listings[price]" value="<%= DATA.price %>"
+                    required>
+                <div class="invalid-feedback">Price required</div>
+            </div>
+            <div class="col-md-4">
+                <label for="inputLocation" class="form-label"><b>Location</b></label>
+                <input type="text" class="form-control" id="inputLocation" name="listings[location]"
+                    value="<%= DATA.location %>" required>
+                <div class="invalid-feedback">Location required</div>
+            </div>
+            <div class="col-md-4">
+                <label for="inputCountry" class="form-label"><b>Country</b></label>
+                <input type="text" class="form-control" id="inputCountry" name="listings[country]"
+                    value="<%= DATA.country %>" required>
+                <div class="invalid-feedback">Country name required</div>
+            </div>
+            <div class="edit_btn">
+                <button type="submit" class="btn btn-primary"><b>Update</b></button>
+            </div>
+        </form>
+    </body>
+
+    </html>
