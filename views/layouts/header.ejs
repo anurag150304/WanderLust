@@ -11,14 +11,11 @@
                     <a class="nav-link" aria-current="page" href="/listings">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">All Listings</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/listings/new">Add New</a>
                 </li>
             </ul>
-            <form class="d-flex search-box" role="search">
-                <input class="form-control search-bar me-2 ps-5 pe-4" type="search" placeholder="Search destination"
+            <form class="d-flex search-box ms-5" role="search" action="/listings/search">
+                <input class="form-control search-bar me-2 ps-3" type="search" placeholder="Search destination"
                     aria-label="Search" name="dest">
                 <button class="btn btn-outline-success search-btn" type="submit">Search</button>
             </form>

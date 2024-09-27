@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
+
+html {
+    font-size: 16px;
+    background-color: #00000011;
+}
+
 body {
     position: relative;
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -20,18 +26,32 @@ a {
     cursor: pointer;
 }
 
-.row a {
+.listings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.listings a {
     background-color: white;
     opacity: 1;
 }
 
-.row a:hover {
+.listings a:hover {
     opacity: 0.9;
 }
 
 .idx-card {
+    width: 15em;
     border: none;
     border-radius: 1em;
+}
+
+.idx-card img {
+    height: 14em;
+    width: 100%;
 }
 
 .card-img-top {
@@ -208,6 +228,10 @@ footer {
     border: 2px solid black;
 }
 
+.nav-link {
+    text-wrap: nowrap;
+}
+
 .nav_icons {
     padding: 1.5em 1.7em 0 1.7em;
 }
@@ -216,15 +240,17 @@ footer {
     display: flex;
     gap: 3.3em;
     margin: 0 auto;
+    overflow-x: scroll;
+
+}
+
+.nav_icons ul::-webkit-scrollbar {
+    display: none;
 }
 
 .nav_icons ul li {
     list-style: none;
     opacity: 0.6;
-}
-
-.nav_icons ul li hr {
-    display: none;
 }
 
 .nav_icons ul li:hover {
@@ -306,11 +332,12 @@ footer {
     transition: 0.3s;
 }
 
-.search-box {
-    margin-left: 10em;
+.search-bar {
+    width: 17em;
 }
 
-.search-bar {
+.search-bar,
+.srch-bar {
     border-radius: 1.5em;
     font-size: 0.8rem;
 }
@@ -322,3 +349,107 @@ footer {
     padding: 0 1em;
     font-weight: 500;
 }
+
+.srch-box,
+.srch-bar,
+.srch-box button {
+    display: none;
+}
+
+@media Screen and (min-width: 576px) and (max-width: 955.5px) {
+    html {
+        font-size: 13px;
+    }
+
+    .search-box {
+        margin-left: 4em;
+    }
+
+    .idx-card {
+        width: 12.6em;
+    }
+
+    .idx-card img {
+        height: 11.5em;
+    }
+
+}
+
+@media Screen and (min-width: 452px) and (max-width: 659.5px) {
+
+    .right ul li a,
+    .left ul li a {
+        font-size: 0.8rem;
+    }
+
+    .right ul li a i {
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 451.5px) {
+    .idx-card {
+        width: 20em;
+    }
+
+    .idx-card img {
+        height: 17em;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 1.5em;
+    }
+
+    .right ul li a,
+    .left ul li a {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3em;
+    }
+
+    .search-box,
+    .search-bar,
+    .search-btn {
+        display: none;
+    }
+
+    .srch-box,
+    .srch-bar,
+    .srch-box button {
+        display: block;
+    }
+
+    .srch-box {
+        width: 20em;
+        position: relative;
+        margin: auto;
+    }
+
+    .srch-bar {
+        width: 100%;
+        margin: auto;
+        box-shadow: 1px 1px 3px #0000003d;
+    }
+
+    .srch-box button {
+        border: none;
+        /* background-color: inherit; */
+        margin: 0;
+        padding: 0.2em;
+        background-color: inherit;
+        height: fit-content;
+        position: absolute;
+        right: 5%;
+        bottom: 5%;
+        opacity: 0.5;
+    }
+}
+
+@media Screen and (min-width: 1030px) and (max-width: 2561px) {}

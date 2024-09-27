@@ -66,3 +66,8 @@ module.exports.categoryListings = async (req, res, next) => {
     const values = await listings.find({ category: req.params.ctg });
     res.render('listings/categories', { DATA: values });
 }
+
+module.exports.searchListing = async (req, res, next) => {
+    const values = await listings.find({ location: req.query.dest });
+    res.render('listings/search', { DATA: values });
+}

@@ -7,7 +7,7 @@ const asyncWrap = require('../utils/asyncWrap');
 const { isLoggedIn } = require('../middlewares/authorizor');
 const { checkValidations } = require('../middlewares/listingValidator');
 const { isOwner } = require('../middlewares/ownerValidator');
-const { index, viewPage, createPage, editPage, putEdit, deleteListing, categoryListings } = require('../controller/listings');
+const { index, viewPage, createPage, editPage, putEdit, deleteListing, categoryListings, searchListing } = require('../controller/listings');
 
 router.get('/', asyncWrap(index));
 
@@ -17,7 +17,7 @@ router.route('/new')
 
 router.get('/id=:id/edit', isLoggedIn, isOwner, asyncWrap(editPage));
 router.get('/category=:ctg', asyncWrap(categoryListings));
-router
+router.get('/search', asyncWrap(searchListing));
 
 router.route('/id=:id')
     .get(asyncWrap(viewPage))
