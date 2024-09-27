@@ -5,7 +5,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
-// const MongoStore = require('connect-mongo');
+const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
@@ -17,24 +17,24 @@ const errHandler = require('./utils/errHandler');
 
 const App = express();
 const port = 8080;
-// const url = `${process.env.ATLASDB_URL}`;
+const url = `${process.env.ATLASDB_URL}`;
 
 main().then(() => console.log('connection successfull')).catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/wanderLust');
+    await mongoose.connect(url);
 }
 
-// const store = MongoStore.create({
-//     mongoUrl: url,
-//     crypto: {
-//         secret: `${process.env.SECRET}`
-//     },
-//     touchAfter: 24 * 3600
-// });
+const store = MongoStore.create({
+    mongoUrl: url,
+    crypto: {
+        secret: `${process.env.SECRET}`
+    },
+    touchAfter: 24 * 3600
+});
 
 const sessionOptions = {
-    // store,
+    store,
     secret: `${process.env.SECRET}`,
     resave: false,
     saveUninitialized: true,
