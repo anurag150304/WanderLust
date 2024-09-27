@@ -57,7 +57,7 @@ Make sure you have the following installed:
    npm install
 
 3. Set up your environment variables:
-
+    ```bash
     CLOUDINARY_CLOUD_NAME=your_cloud_name
     CLOUDINARY_KEY=your_cloudinary_key
     CLOUDINARY_SECRET=your_cloudinary_secret
@@ -70,7 +70,6 @@ Make sure you have the following installed:
 4. Start the development server:
      ```bash
      npm start
-
 
 ### Descriptions:
 
