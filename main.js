@@ -17,25 +17,25 @@ const errHandler = require('./utils/errHandler');
 
 const App = express();
 const port = 8080;
-// const url1 = 'mongodb://127.0.0.1:27017/wanderLust';
-const url2 = `${process.env.ATLASDB_URL}`;
+const url1 = 'mongodb://127.0.0.1:27017/wanderLust';
+// const url2 = `${process.env.ATLASDB_URL}`;
 
 main().then(() => console.log('connection successfull')).catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect(url2);
+    await mongoose.connect(url1);
 }
 
-const store = MongoStore.create({
-    mongoUrl: url2,
-    crypto: {
-        secret: `${process.env.SECRET}`
-    },
-    touchAfter: 24 * 3600
-});
+// const store = MongoStore.create({
+//     mongoUrl: url2,
+//     crypto: {
+//         secret: `${process.env.SECRET}`
+//     },
+//     touchAfter: 24 * 3600
+// });
 
 const sessionOptions = {
-    store,
+    // store,
     secret: `${process.env.SECRET}`,
     resave: false,
     saveUninitialized: true,
