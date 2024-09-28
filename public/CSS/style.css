@@ -145,6 +145,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap-reverse;
     padding: 2em;
 }
 
@@ -157,30 +158,42 @@ footer {
     position: relative;
 }
 
-.feedback-body {
-    width: 237px;
-    right: 0px;
-    top: -27px;
-    position: absolute;
-    display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.519);
-    border-radius: 0.6em;
-    cursor: pointer;
+.feedback-box {
+    width: fit-content;
+    gap: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 2em;
+}
+
+.review_form {
+    width: 35em;
+    padding-left: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
 }
 
 .feedback-body ul {
     border-radius: inherit;
 }
 
-.feedback-box {
-    width: 97vw;
-    gap: 5em;
-    padding-left: 7em;
+.reviews {
+    width: 28.4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
 }
 
 .review-list {
     height: fit-content;
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -308,7 +321,7 @@ footer {
     background: linear-gradient(135deg, #fdfbfb, #ebedee);
     border: 1px solid #ddd;
     border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px #0000001a;
     font-size: 18px;
     color: #333;
     font-weight: 500;
@@ -327,7 +340,7 @@ footer {
 }
 
 .category-box:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px #00000026;
     transform: translateY(-2px);
     transition: 0.3s;
 }
@@ -356,6 +369,54 @@ footer {
     display: none;
 }
 
+.map-container {
+    width: 40em;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+#map {
+    width: 100%;
+}
+
+.card-img-top {
+    height: 20rem;
+    width: 30rem;
+    object-fit: cover;
+}
+
+.rev {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.review_cards {
+    width: 13rem;
+    height: fit-content;
+    position: relative;
+}
+
+.signup {
+    height: 55vh;
+    margin: 3em auto 0 auto;
+    padding: 0 2em;
+}
+
+.login {
+    height: 55vh;
+    margin: 4em auto 0 auto;
+    padding: 0 2em;
+}
+
+.flash {
+    margin: auto;
+
+}
+
 @media Screen and (min-width: 576px) and (max-width: 955.5px) {
     html {
         font-size: 13px;
@@ -373,6 +434,14 @@ footer {
         height: 11.5em;
     }
 
+    .map-container {
+        width: 35em;
+    }
+
+    .review_form {
+        padding: 0;
+    }
+
 }
 
 @media Screen and (min-width: 452px) and (max-width: 659.5px) {
@@ -385,6 +454,24 @@ footer {
     .right ul li a i {
         font-size: 1rem;
     }
+
+    .search-box {
+        margin-left: 1em;
+    }
+
+    .map-container {
+        width: 29em;
+    }
+
+    .review_form,
+    .feedback-box {
+        padding: 0;
+    }
+
+    .review_form {
+        width: 20em;
+    }
+
 }
 
 
@@ -449,6 +536,36 @@ footer {
         right: 5%;
         bottom: 5%;
         opacity: 0.5;
+    }
+
+    .card-img-top {
+        height: 10rem;
+        width: 20rem;
+    }
+
+    .map-container {
+        width: 20em;
+    }
+
+    #map {
+        height: 15em;
+    }
+
+    .review_form,
+    .feedback-box {
+        padding: 0;
+    }
+
+    .review_form {
+        width: 20em;
+    }
+
+    .reviews {
+        width: fit-content;
+    }
+
+    .flash {
+        margin: 0 2em;
     }
 }
 

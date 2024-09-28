@@ -1,6 +1,6 @@
 <% layout('/layouts/boilerplate.ejs') %>
 
-    <body>
+    <body style="height: 100vh;">
         <form class="row g-3 p-4 needs-validation" action="/listings/new" method="post" enctype="multipart/form-data"
             novalidate>
             <div class="col-md-6">
@@ -22,13 +22,13 @@
                 <div class="invalid-feedback">Description required</div>
             </div>
             <div class="col-md-4">
-                <label for="inputContent" class="form-label"><b>Category</b></label>
+                <label for="inputCategory" class="form-label"><b>Category</b></label>
                 <input type="text" class="form-control" id="inputCategory" name="listings[category]"
                     placeholder="eg - Luxurious" required>
                 <div class="invalid-feedback">Category required</div>
             </div>
             <div class="col-md-4">
-                <label for="inputAPrice" class="form-label"><b>Price</b></label>
+                <label for="inputPrice" class="form-label"><b>Price</b></label>
                 <input type="text" class="form-control" id="inputPrice" name="listings[price]" placeholder="eg- 100000"
                     required>
                 <div class="invalid-feedback">Price required</div>

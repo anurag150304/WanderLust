@@ -56,10 +56,13 @@ module.exports.putEdit = async (req, res, next) => {
 }
 module.exports.deleteListing = async (req, res, next) => {
     const value = await listings.findByIdAndDelete(req.params.id);
-    if (!value) {
-        req.flash('error', 'Listing not found');
-        return res.redirect('/listings');
+    if (value) {
+        req.flash('success', 'Listing Deleted');
     }
+    else {
+        req.flash('error', 'Listing not found');
+    }
+    res.redirect('/listings');
 }
 
 module.exports.categoryListings = async (req, res, next) => {
