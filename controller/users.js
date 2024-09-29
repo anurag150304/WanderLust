@@ -4,7 +4,6 @@ module.exports.signupUser = async (req, res, next) => {
     try {
         const newUser = new User({ username: req.body.username, email: req.body.email });
         const registeredUser = await User.register(newUser, req.body.password);
-        console.log(registeredUser);
         req.logIn(registeredUser, (err) => {
             if (err) return next(err);
             req.flash('success', 'Welcome to AirBnB');

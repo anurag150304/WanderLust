@@ -477,11 +477,7 @@ footer {
 
 @media screen and (max-width: 451.5px) {
     .idx-card {
-        width: 20em;
-    }
-
-    .idx-card img {
-        height: 13em;
+        width: 21em;
     }
 
     footer {
@@ -527,7 +523,6 @@ footer {
 
     .srch-box button {
         border: none;
-        /* background-color: inherit; */
         margin: 0;
         padding: 0.2em;
         background-color: inherit;
@@ -540,15 +535,15 @@ footer {
 
     .card-img-top {
         height: 14rem;
-        width: 20rem;
+        width: 21rem;
     }
 
     .map-container {
-        width: 20em;
+        width: 21em;
     }
 
     #map {
-        height: 15em;
+        height: 17em;
     }
 
     .review_form,

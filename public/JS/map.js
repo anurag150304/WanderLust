@@ -3,9 +3,9 @@ const value = JSON.parse(coordinates);
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/light-v11', // style URL
+    style: 'mapbox://styles/mapbox/streets-v12', // style URL
     center: value, // starting position [lng, lat]
-    zoom: 15, // starting zoom
+    zoom: 9, // starting zoom
 });
 
 // create the popup
