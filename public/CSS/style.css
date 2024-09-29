@@ -314,6 +314,10 @@ footer {
     max-width: 200px;
 }
 
+.mapboxgl-popup-content {
+    padding: 12px 6px 8px;
+}
+
 .category-box {
     display: flex;
     align-items: center;
