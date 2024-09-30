@@ -23,8 +23,19 @@
             </div>
             <div class="col-md-4">
                 <label for="inputCategory" class="form-label"><b>Category</b></label>
-                <input type="text" class="form-control" id="inputCategory" name="listings[category]"
-                    placeholder="eg - Luxurious" required>
+                <select class="form-select" id="inputCategory" aria-label="Default select example"
+                    name="listings[category]" required>
+                    <option value="Rooms">Rooms</option>
+                    <option value="Amazing Pools">Amazing Pools</option>
+                    <option value="Farms">Farms</option>
+                    <option value="Amazing views">Amazing views</option>
+                    <option value="Luxurious">Luxurious</option>
+                    <option value="National park">National park</option>
+                    <option value="Camping">Camping</option>
+                    <option value="Cabins">Cabins</option>
+                    <option value="Treehouses">Treehouses</option>
+                    <option value="OMG">OMG</option>
+                </select>
                 <div class="invalid-feedback">Category required</div>
             </div>
             <div class="col-md-4">
