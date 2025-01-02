@@ -3,12 +3,12 @@ const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapToken = process.env.MAP_ACCESS_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
-module.exports.index = async (req, res, next) => {
+module.exports.index = async (req, res) => {
     const allListings = await listings.find({});
     res.render('listings/index', { DATA: allListings });
 }
 
-module.exports.viewPage = async (req, res, next) => {
+module.exports.viewPage = async (req, res) => {
     const value = await listings.findById(req.params.id).populate('owner').populate({ path: 'reviews', populate: 'author' });
     if (!value) {
         req.flash('error', 'Listing not found');
@@ -17,7 +17,7 @@ module.exports.viewPage = async (req, res, next) => {
     res.render('listings/view', { DATA: value });
 }
 
-module.exports.createPage = async (req, res, next) => {
+module.exports.createPage = async (req, res) => {
     const response = await geocodingClient.forwardGeocode({ query: req.body.listings.location, limit: 1 }).send();
     const DATA = new listings({
         title: req.body.listings.title,
@@ -35,7 +35,7 @@ module.exports.createPage = async (req, res, next) => {
     res.redirect('/listings');
 }
 
-module.exports.editPage = async (req, res, next) => {
+module.exports.editPage = async (req, res) => {
     const value = await listings.findById(req.params.id);
     if (value) {
         res.render('listings/edit', { DATA: value });
@@ -46,7 +46,7 @@ module.exports.editPage = async (req, res, next) => {
     }
 }
 
-module.exports.putEdit = async (req, res, next) => {
+module.exports.putEdit = async (req, res) => {
     const value = await listings.findByIdAndUpdate(req.params.id, req.body.listings, { runValidators: true });
     if (req.file) {
         value.image = { filename: req.file.filename, url: req.file.path };
@@ -54,7 +54,7 @@ module.exports.putEdit = async (req, res, next) => {
     }
     res.redirect(`/listings/id=${req.params.id}`);
 }
-module.exports.deleteListing = async (req, res, next) => {
+module.exports.deleteListing = async (req, res) => {
     const value = await listings.findByIdAndDelete(req.params.id);
     if (value) {
         req.flash('success', 'Listing Deleted');
@@ -65,12 +65,12 @@ module.exports.deleteListing = async (req, res, next) => {
     res.redirect('/listings');
 }
 
-module.exports.categoryListings = async (req, res, next) => {
+module.exports.categoryListings = async (req, res) => {
     const values = await listings.find({ category: req.params.ctg });
     res.render('listings/categories', { DATA: values });
 }
 
-module.exports.searchListing = async (req, res, next) => {
+module.exports.searchListing = async (req, res) => {
     const values = await listings.find({ location: req.query.dest });
     res.render('listings/search', { DATA: values });
 }
