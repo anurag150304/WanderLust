@@ -5,7 +5,7 @@ A full-stack Airbnb clone built using Node.js, Express.js, MongoDB, and other mo
 ## Live Demo
 
 Check out the live demo of the project here:  
-👉 **[Wanderlust - Airbnb Clone](https://wanderlust-mmuj.onrender.com/listings)**
+👉 **[Wanderlust - Airbnb Clone](https://wandelust-hs3l.onrender.com/)**
 
 ## Features
 
